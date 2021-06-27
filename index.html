@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+/*La diferencia entre let y var es que var te permite utilizar una variable que este dentro de un bloque
+como variable global, mientras que let le da su espacio a las variables por lo tanto una variable que está dentro 
+del bloque será reconocida solo dentro del bloque
+*/
+// opcion = 1;
+// if(opcion == 1){
+//     let nombre = 'Daniel';
+// }
+// console.log(nombre);
+
+//constantes - el valor de una variable constante es fijo
+// const pi = 3.14;
+// pi = 2;
+// console.log(pi);
+
+//cadenas de texto y plantillas
+// saludo = "Hola tú bienvenido";
+// nombre = "Daniel";
+
+// console.log(saludo + ' ' + nombre);
+// console.log(`Hola ${nombre} bienvenido`);
+
+// booleanos
+// edad = 18;
+// mayorEdad = edad>=18 ? 'es un loquillo': 'no es un loquillo' ;
+// console.log(`tiene ${edad} años y ${mayorEdad}`);
+// numero = 8;
+// numero2 = 9;
+// if(numero == 8 && numero2 == 9){
+//     console.log('numero es 8');
+// }
+
+// undefined - cuando la variable no se a definido;
+// null - cuando se a definido la variable pero no tiene valor
+// holamundo=23;
+// if(isNaN(holamundo)){
+//     console.log('no es un número');
+//     console.log(holamundo);
+// }
+
+//funciones
+// function calcularEdad(añoActual, añoNacimiento){
+//     return añoActual-añoNacimiento;
+// }
+// console.log(calcularEdad( 2021,1999));
+
+//array
+// estudiantes = ['Daniel','Steven','Doménica'];
+
+// estudiantes.forEach(e=>console.log(e));
+
+// for(let i=0; i<estudiantes.length; i++){
+//     console.log(estudiantes[i]);
+// }
+
+// for(estudiante of estudiantes){
+//     console.log(estudiante);
+// }
+
+//devuelve los indices
+// for(i in estudiantes){
+//     console.log(estudiantes[i]);
+// }
+
+//objetos
+// persona = {
+//     nombre:'',
+//     apellido:'',
+//     edad:0
+// }
+// persona.nombre = 'Daniel';
+// persona.apellido = 'Delgado';
+// console.log(persona);
+
+// class Persona {
+//     nombre = '';
+//     apellido = '';
+//     edad = 0;
+// }
+// persona1 = new Persona();
+// persona1.nombre= 'Danielito';
+// console.log(persona1);
+
+// persona2 = new Persona();
+// persona2.nombre = 'Doménica';
+// console.log(persona2);
+
+// class Persona{
+//     constructor(nombre, apellido, edad){
+//         this.nombre = nombre;
+//         this.apellido = apellido;
+//         this.edad = edad;
+//     }
+//     mayorEdad = function (){
+//         if(this.edad>=18){
+//             return 'es mayor de edad';
+//         }else{
+//             return 'es menor de edad';
+//         }
+//     }
+//     saludar = () => 'hola tu '+ this.nombre;
+// }
+
+// persona1 = new Persona('daniel','delgado',21);
+// console.log(persona1);
+// console.log(persona1.mayorEdad());
+// console.log(persona1.saludar());
+
+
+// manejo de errores
+// try{
+//     numero = "asdf";
+//     if(isNaN(numero)){
+//         throw new Error("ingresa un número ctm");
+//     }
+//     console.log(numero * numero);
+// }catch(error){
+//     console.log('hay un error '+ error);
+// }
+
+// try{
+//     console.log('entrando al try');
+//     let x = 12;
+//     if(isNaN(x)===false){
+//         throw new Error('x es un número');
+//     }
+// }catch(error){
+//     console.log('ha ocurrido el siguiente error. ' + error);
+// }finally{
+//     console.log('finnnxdxd');
+// }
+
+//destructuración - crear variables dinamicamente
+// let numeros = [3,4,6,1];
+// let [tres,cuatro,seis,uno] = numeros;
+// // tres = numeros[0];
+// // cuatro = numeros[1];
+// // seis = numeros[2];
+// // uno = numeros[3];
+// console.log(tres+cuatro);
+
+// const persona1 = {
+//     nombre:'Daniel',
+//     apellido:'Delgado',
+//     habilidades: ['html','css','js','php','mysql','c#']
+// }
+// const {nombre,apellido,habilidades} = persona1;
+// console.log(habilidades);
+// habilidades.map(e=>console.log(e));
+
+// let estudiantes = [
+//     {
+//         nombre:'Daniel',
+//         apellido:'Delgado'
+//     },
+//     {
+//         nombre:'Danielito',
+//         apellido:'Delgadito'
+//     },
+//     {
+//         nombre:'Danielita',
+//         apellido:'Delgada'
+//     }
+// ];
+// estudiantes.forEach(
+//     (e) => {
+//     console.log(`hola yo soy ${e.nombre} ${e.apellido}`);
+//     }
+// );
+
+// let[estudiante1, , estudiante3] = estudiantes;
+// let {nombre, apellido} = estudiante1;
+// console.log(nombre+' '+apellido);
+
+// objetos literales - manera resumida de declarar propiedades y metodos en objetos 
+// let edad = 18;
+// const dog = {
+//     nombre:'daniel',
+//     edad,
+//     saludar(){console.log('hola tu')}
+// } 
+// console.log(dog);
+// dog.saludar();
+
+// let nombre = 'Daniel';
+// let apellido = 'Delgado';
+// let edad = 22;
+
+// persona1 = {
+//     nombre,
+//     apellido,
+//     edad,
+//     saludar(){
+//         console.log('hola misooo');
+//     }
+// }
+// console.log(persona1);
+
+//parámetros rest, son infinitos en una funcion o en una variable ... antes del nombre
+// function sumar(a, b, ...c){
+//     let resultado = a + b;
+//     c.forEach((n)=>{
+//         resultado += n;
+//     });
+//     return resultado;
+// }
+
+
+// let nombres = [];
+// function agregar(...n){
+//     n.forEach((e,i) =>{
+//         nombres.push(e);
+//     });
+//     return nombres;
+// }
+// console.log(
+//     agregar(1,2,3,4)
+// );
+
+// const nums1 = [1,2,3,4],
+//     nums2 = [5,6,7,8],
+//     nums3 = [...nums1, ...nums2];
+
+// const div = nums3.map(e=>e/2);
+// const div2 = [];
+// nums3.forEach(e=>div2.push(e/2));
+// console.log(div2);
+// const colegioA = [
+//     {
+//         nivel: 4,
+//         paralelo:'D',
+//         estudiantes:32
+//     },
+//     {
+//         nivel: 3,
+//         paralelo:'C',
+//         estudiantes:10
+//     }
+// ],
+// colegioB = [
+//     {
+//         nivel: 5,
+//         paralelo:'A',
+//         estudiantes:21
+//     },
+//     {
+//         nivel: 6,
+//         paralelo:'B',
+//         estudiantes:30
+//     }
+// ];
+// const colegios = [...colegioA,...colegioB];
+// let niveles = [];
+// let paralelos = [];
+// let estuds = [];
+// colegios.forEach(e=>{
+//     niveles.push(e.nivel);
+//     paralelos.push(e.paralelo);
+//     estuds.push(e.estudiantes);
+// });
+// console.log(...niveles, ...paralelos, ...estuds);
+
+// function imprimir(){
+//     console.log(this);
+// }
+// imprimir();
+
+// const perro = {
+//     nombre:'akira',
+//     raza:'enana',
+//     saludar(){return this.nombre}
+// }
+// console.log(perro.saludar());
+
+//prototipos
+
+// function Animal (nombre,raza) {
+//     this.nombre = nombre;
+//     this.raza = raza;
+// }
+// Animal.prototype.hablar = function(){
+//     console.log('woooof '+this.nombre);
+// }
+
+// const perro = new Animal('akira','runita bella');
+// const perro2 = new Animal('akira2','runita bella2');
+// // console.log(perro.nombre);
+// console.log(perro);
+
+// console.log(perro2);
+// perro.hablar();
+</script>
+</body>
+</html>
